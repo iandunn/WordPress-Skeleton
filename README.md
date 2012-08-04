@@ -19,7 +19,6 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 ## Installation
 * git clone git://github.com/iandunn/WordPress-Skeleton.git
 * Create *database.php* (see sample below)
-* Update paths in .htaccess to match your installation
 * @todo any other steps?
 
 ## Sample database.php
