@@ -20,10 +20,13 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 
 ```php
 <?php
+
 define( 'DB_NAME',      '' );
 define( 'DB_USER',      '' );
 define( 'DB_PASSWORD',  '' );
 define( 'DB_HOST',      'localhost' );
+define( 'DB_CHARSET',   'utf8');
+define( 'DB_COLLATE',   '');
 
 $table_prefix = 'xyz_';
 
@@ -36,5 +39,6 @@ define( 'AUTH_SALT',        '' );
 define( 'SECURE_AUTH_SALT', '' );
 define( 'LOGGED_IN_SALT',   '' );
 define( 'NONCE_SALT',       '' );
+
 ?>
 ```
