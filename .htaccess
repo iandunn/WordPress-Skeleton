@@ -1,10 +1,14 @@
-# BEGIN WordPress Skeleton rewrites
+# BEGIN WordPress Skeleton
 <IfModule mod_rewrite.c>
         RewriteEngine On
         RewriteBase /
 
-        # Internally rewrite /wordpress/*.php files as /*.php
-        RewriteCond %{REQUEST_URI} ^/(.*)\.php$
+        # Iternally rewrite requests to document root to /wordpress/index.php
+        RewriteCond %{REQUEST_URI} ^/$
+        ReWriteRule ^(.*)$ /wordpress/index.php [L]
+
+        # Internally rewrite /wordpress/*.php|html|txt files as /*.php|html|txt
+        RewriteCond %{REQUEST_URI} ^/(.*)\.(php|html|txt)$
         RewriteCond %{REQUEST_URI} !^/wordpress/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
 
@@ -18,7 +22,7 @@
         RewriteCond %{REQUEST_URI} !^/wordpress/wp-includes/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
 </IfModule>
-# END WordPress Skeleton rewrites
+# END WordPress Skeleton
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
