@@ -4,7 +4,7 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 
 ## Customizations
 
-* Database credentials, table prefix and salts stored in single, unversioned */database.php* instead of using different local configs for development/staging/production. This keeps the shared configuration values versioned in *wp-config.php*, but makes sure that [the production database credentials are never versioned](http://wordpress.stackexchange.com/q/52682/3898).
+* Instance-specific config values (database credentials, table prefix, salts, etc) stored in a single, unversioned */instance-config.php* instead of using separate files for development/staging/production. This keeps the shared configuration values versioned in *wp-config.php*, but lets each installation change the values that are specific to it. It also makes sure that [the production database credentials are never versioned](http://wordpress.stackexchange.com/q/52682/3898).
 * WordPress core stored in */wordpress/* instead of */wp/*.
 * *.htaccess* rewrite rules for */wordpress/wp-admin/* and */wordpress/wp-includes/* so they can be accessed from */wp-admin/* and */wp-includes/*.
 * *.htaccess* rewrite rules for all root-level *.php* files to live in */wordpress/*, but still be accessed from */*
@@ -21,13 +21,13 @@ This assumes *httpdocs* directory is empty.
 
 * cd /var/www/vhosts/example.com/httpdocs
 * git clone git://github.com/iandunn/WordPress-Skeleton.git .
-* Create *database.php* and update values (see sample below)
+* mv README.md instance-config.php, then delete everything except sample PHP file and update its values
 * git submodule init
 * git submodule update
 * git remote rm origin
 
 
-## Sample database.php
+## Sample instance-config.php
 
 ```php
 <?php
@@ -50,6 +50,8 @@ define( 'AUTH_SALT',		'' );
 define( 'SECURE_AUTH_SALT',	'' );
 define( 'LOGGED_IN_SALT',	'' );
 define( 'NONCE_SALT',		'' );
+
+define( 'WP_DEBUG', true );
 
 ?>
 ```
