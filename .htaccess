@@ -12,7 +12,7 @@
         RewriteCond %{REQUEST_URI} !^/wordpress/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
 
-        # Internally rewrite /wordpress/wp-admin as /wp/wp-admin
+        # Internally rewrite /wordpress/wp-admin as /wp-admin
         RewriteCond %{REQUEST_URI} ^/wp-admin/.*$
         RewriteCond %{REQUEST_URI} !^/wordpress/wp-admin/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
