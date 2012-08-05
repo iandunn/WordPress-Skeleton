@@ -1,5 +1,7 @@
 /database.php
-/README.md
 /content/*
+
+!/content/index.php
+!/content/*/index.php
 !/content/plugins
 !/content/themes
