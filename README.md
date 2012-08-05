@@ -17,13 +17,14 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 
 ## Installation
 
-This assumes httpdocs directory is empty.
+This assumes *httpdocs* directory is empty.
 
 * cd /var/www/vhosts/example.com/httpdocs
 * git clone git://github.com/iandunn/WordPress-Skeleton.git .
 * Create *database.php* and update values (see sample below)
-* checkout wordpress
-* checkout akismet (do those in one step?)
+* git submodule init
+* git submodule update
+* git remote rm origin
 
 
 ## Sample database.php
