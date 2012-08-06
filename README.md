@@ -21,7 +21,8 @@ This assumes *httpdocs* directory is empty.
 
 * cd /var/www/vhosts/example.com/httpdocs
 * git clone git://github.com/iandunn/WordPress-Skeleton.git .
-* mv README.md instance-config.php, then delete everything except sample PHP file and update its values
+* mv README.md instance-config.php
+  * then delete all the contents, except for the sample instance-config, and update the values
 * git submodule init
 * git submodule update
 * git remote rm origin
