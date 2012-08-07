@@ -21,6 +21,11 @@
         RewriteCond %{REQUEST_URI} ^/wp-includes/.*$
         RewriteCond %{REQUEST_URI} !^/wordpress/wp-includes/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
+
+	# Internally rewrite /wordpress/wp-content/themes/* as /wp-content/themes/*
+        RewriteCond %{REQUEST_URI} ^/wp-content/themes/.*$
+        RewriteCond %{REQUEST_URI} !^/wordpress/wp-content/themes/.*$
+        RewriteRule ^(.*)$ /wordpress/$1 [L]
 </IfModule>
 # END WordPress Skeleton
 

@@ -1,7 +1,17 @@
 /environment-config.php
 /content/*
+/content/plugins/*
+/content/mu-plugins/*
+/content/themes/*
+/content/uploads/*
 
 !/content/index.php
+!/content/plugins/
 !/content/plugins/index.php
+!/content/mu-plugins/
+!/content/mu-plugins/index.php
+!/content/mu-plugins/wordpress-skeleton-functionality.php
+!/content/themes/
 !/content/themes/index.php
+!/content/uploads/
 !/content/uploads/index.php

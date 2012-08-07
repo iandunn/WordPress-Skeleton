@@ -9,10 +9,9 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 * *.htaccess* rewrite rules for */wordpress/wp-admin/* and */wordpress/wp-includes/* so they can be accessed from */wp-admin/* and */wp-includes/*.
 * *.htaccess* rewrite rules for all root-level *.php* files to live in */wordpress/*, but still be accessed from */*
 * */content/uploads* symlink replaced with actual directory
-* TwentyTen symlink removed from */content/themes/*
+* Instead of manually symlinking themes from */content/themes/* to */wordpress/wp-content/themes/*, */mu-plugins/wordpress-skeleton-functionality.php*, registers */wordpress/wp-content/themes/* as an additional theme directory. Kudos to Rarst for [the idea](https://github.com/Rarst/WordPress-Skeleton/commit/c8770e5828310970d2b1a5099695a932d471e954).
 * Akismet added as Git submodule in */content/plugins/akismet/*
 * *.gitignore* pruned for unnecessary entries
-* */content/mu-plugins/* directory removed
 
 
 ## Installation
