@@ -2,6 +2,6 @@
 /content/*
 
 !/content/index.php
-!/content/*/index.php
-!/content/plugins
-!/content/themes
+!/content/plugins/index.php
+!/content/themes/index.php
+!/content/uploads/index.php
