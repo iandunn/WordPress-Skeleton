@@ -62,4 +62,5 @@ define( 'WP_DEBUG', true );
   * [WP Super Cache](https://github.com/WordPress-Plugins-Themes/wp-super-cache)
   * Login Security Solution
   * Better WP Security
-  * [WP-DB-Backup](https://github.com/matzko/wp-db-backup)
+  * [WP-DB-Backup](https://github.com/matzko/wp-db-backup) (or something newer)
+  * Add wget commands to instructions if can't find Git repos for them
