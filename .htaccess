@@ -3,7 +3,7 @@
         RewriteEngine On
         RewriteBase /
 
-        # Iternally rewrite requests to document root to /wordpress/index.php
+        # Iternally rewrite requests to document root as /wordpress/index.php
         RewriteCond %{REQUEST_URI} ^/$
         ReWriteRule ^(.*)$ /wordpress/index.php [L]
 
