@@ -12,6 +12,7 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 * Instead of manually symlinking themes from */content/themes/* to */wordpress/wp-content/themes/*, */mu-plugins/wordpress-skeleton-functionality.php* registers */wordpress/wp-content/themes/* as an additional theme directory. Kudos to Rarst for [the idea](https://github.com/Rarst/WordPress-Skeleton/commit/c8770e5828310970d2b1a5099695a932d471e954).
 * Akismet added as Git submodule in */content/plugins/akismet/*
 * *.gitignore* pruned for unnecessary entries
+* XML-RPC disabled [to minimize potential security vulnerabilities](http://core.trac.wordpress.org/ticket/21509#comment:5).
 
 
 ## Installation
@@ -59,6 +60,10 @@ define( 'WP_CACHE',			false );
 
 ## TODO
 
+* When 3.5 comes out, test this in WPMS. 
+	* Probably need to add blogs.dir stuff to gitignore
+	* Maybe add config for network setup to wp-config, but commented out?
+	* Also update playground/wpms
 * Remove 3rd party Akismet submodule as a security precaution
 	* Remove from features
 * Since .htaccess is versioned, add an example of setting up rules based on whether the site is dev/staging/production. e.g, htauth
