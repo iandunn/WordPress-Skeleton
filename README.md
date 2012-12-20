@@ -2,6 +2,7 @@
 
 Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream documentation](https://github.com/markjaquith/WordPress-Skeleton) for base details.
 
+
 ## Customizations
 
 * Environment-specific config values (database credentials, table prefix, salts, etc) stored in a single, unversioned */environment-config.php* instead of using separate files for development/staging/production. This keeps the shared configuration values versioned in *wp-config.php*, but lets each installation change the values that are specific to it. It also makes sure that [the production database credentials are never versioned](http://wordpress.stackexchange.com/q/52682/3898).
@@ -25,7 +26,11 @@ This assumes *httpdocs* directory is empty.
 * git submodule update
 * git remote rm origin
 * git mv README.md environment-config.php
-  * then delete all the contents, except for the sample environment-config, and update its values
+	* then delete all the contents, except for the sample environment-config, and update its values
+* git rm --cached environment-config.php
+* [Rename WordPress Functionality Plugin submodule](http://stackoverflow.com/questions/4526910/rename-a-git-submodule), update .gitignore, then follow the installation instructions for it
+	* git checkout master before renaming/editing wordpress-functionality-plugin-skeleton.php 
+* To work with [wp-cli](http://wp-cli.org/), just add *alias wp='wp --path=wordpress'* to your *~/.bashrc* or */etc/profile.d/custom.sh* file
 
 
 ## Sample environment-config.php
@@ -58,12 +63,16 @@ define( 'WP_CACHE',			false );
 ?>
 ```
 
+
 ## TODO
 
+* Look into possible redirect bugs
+	* https://github.com/markjaquith/WordPress-Skeleton/issues/1#issuecomment-11070686
 * When 3.5 comes out, test this in WPMS. 
 	* Probably need to add blogs.dir stuff to gitignore
 	* Maybe add config for network setup to wp-config, but commented out?
 	* Also update playground/wpms
+* Review updates to upstream and other forks too see what should be merged
 * Remove 3rd party Akismet submodule as a security precaution
 	* Remove from features
 * Since .htaccess is versioned, add an example of setting up rules based on whether the site is dev/staging/production. e.g, htauth

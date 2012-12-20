@@ -1,3 +1,7 @@
+# BEGIN example.com custom rules
+# END example.com custom rules
+
+
 # BEGIN WordPress Skeleton
 <IfModule mod_rewrite.c>
         RewriteEngine On
@@ -8,7 +12,10 @@
         ReWriteRule ^(.*)$ /wordpress/index.php [L]
 
         # Internally rewrite /wordpress/*.php|html|txt files as /*.php|html|txt
-        RewriteCond %{REQUEST_URI} ^/(.*)\.(php|html|txt)$
+	# i.e., If a php/html/txt file in the root doesn't exist, look for it in /wordpress
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} ^/[^/]+\.(php|html|txt)(.*)+$
         RewriteCond %{REQUEST_URI} !^/wordpress/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
 
@@ -23,11 +30,13 @@
         RewriteRule ^(.*)$ /wordpress/$1 [L]
 
 	# Internally rewrite /wordpress/wp-content/themes/* as /wp-content/themes/*
+	# This enables using the default themes in /wordpress/wp-content in addition to the themes in /content/themes
         RewriteCond %{REQUEST_URI} ^/wp-content/themes/.*$
         RewriteCond %{REQUEST_URI} !^/wordpress/wp-content/themes/.*$
         RewriteRule ^(.*)$ /wordpress/$1 [L]
 </IfModule>
 # END WordPress Skeleton
+
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
