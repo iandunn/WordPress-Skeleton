@@ -38,6 +38,9 @@ This assumes *httpdocs* directory is empty.
 ```php
 <?php
 
+//define( 'WP_SITEURL',		'http://development.example.org' );		// Use these if dev/staging environments have their own hostnames
+//define( 'WP_HOME',		'http://development.example.org' );
+
 define( 'DB_NAME',			'' );
 define( 'DB_USER',			'' );
 define( 'DB_PASSWORD',		'' );
@@ -57,8 +60,15 @@ define( 'SECURE_AUTH_SALT',	'' );
 define( 'LOGGED_IN_SALT',	'' );
 define( 'NONCE_SALT',		'' );
 
-define( 'WP_DEBUG',			true );
-define( 'WP_CACHE',			false );
+ini_set( 'log_errors',			'On' );
+ini_set( 'display_errors',		'On' );
+ini_set( 'error_reporting',		E_ALL );
+define( 'WP_DEBUG',				true );
+define( 'WP_DEBUG_LOG',			true );
+define( 'WP_DEBUG_DISPLAY',		true );
+define( 'SAVEQUERIES',			true );
+define( 'JETPACK_DEV_DEBUG',	true );
+define( 'WP_CACHE',             false );
 
 ?>
 ```
@@ -68,10 +78,17 @@ define( 'WP_CACHE',			false );
 
 * Look into possible redirect bugs
 	* https://github.com/markjaquith/WordPress-Skeleton/issues/1#issuecomment-11070686
+* Add redirect to production for static content files, so don't have to pull them down to dev/staging
+	RewriteEngine on
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule wp-content/uploads/(.*) http://example.org/wp-content/uploads/$1 [NC,L]
 * When 3.5 comes out, test this in WPMS. 
 	* Probably need to add blogs.dir stuff to gitignore
 	* Maybe add config for network setup to wp-config, but commented out?
 	* Also update playground/wpms
+* Consider leaving WP_DEBUG on in production, but logged instead of displayed?
+	* http://wordpress.org/support/topic/errors-when-using-wp_debug?replies=17
 * Review updates to upstream and other forks too see what should be merged
 * Remove 3rd party Akismet submodule as a security precaution
 	* Remove from features
