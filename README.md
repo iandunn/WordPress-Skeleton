@@ -83,6 +83,8 @@ define( 'WP_CACHE',             false );
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule wp-content/uploads/(.*) http://example.org/wp-content/uploads/$1 [NC,L]
+* Because DISALLOW_FILE_MODS removes the update notices, maybe put in something to display them again
+	try core ticket first though
 * When 3.5 comes out, test this in WPMS. 
 	* Probably need to add blogs.dir stuff to gitignore
 	* Maybe add config for network setup to wp-config, but commented out?
@@ -99,11 +101,13 @@ define( 'WP_CACHE',             false );
 	* WP Super Cache or W3 Total Cache
 	* bwp-minify
 	* Login Security Solution
-	* Better WP Security
+	* WordFence
+	* Google Authenticator
 	* WP-DB-Backup (or something newer)
 	* Google XML Sitemap, or similar?
 	* Subscribe To Comments, or similar?
 	* Formidable?
-	* Add svn export commands to instructions if can't find official Git repos for them
+	* Use Brian Petty's github mirror of the dotorg repo
+	* Also setup some kind of configuration management in the mu-plugin to make you own default settings
 * Maybe add reset-file-permissions.sh, and update instructions to move it above httpdocs and update paths
 * Akismet needs a ! entry in .gitignore?
