@@ -21,9 +21,7 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 This assumes *httpdocs* directory is empty.
 
 * cd /var/www/vhosts/example.com/httpdocs
-* git clone git://github.com/iandunn/WordPress-Skeleton.git .
-* git submodule init
-* git submodule update
+* git clone --recursive git://github.com/iandunn/WordPress-Skeleton.git .
 * git remote rm origin
 * git mv README.md environment-config.php
 	* then delete all the contents, except for the sample environment-config, and update its values
@@ -31,7 +29,20 @@ This assumes *httpdocs* directory is empty.
 * [Rename WordPress Functionality Plugin submodule](http://stackoverflow.com/questions/4526910/rename-a-git-submodule), update .gitignore, then follow the installation instructions for it
 	* git checkout master before renaming/editing wordpress-functionality-plugin-skeleton.php 
 * To work with [wp-cli](http://wp-cli.org/), just add *alias wp='wp --path=wordpress'* to your *~/.bashrc* or */etc/profile.d/custom.sh* file
+* For nginx, just set the default server root to the /wordpress directory, and then add an extra location rule to use the / directory as the root for `/content/` URLs.
 
+```Nginx
+server {
+    listen       80;
+    listen       443 ssl;
+    server_name  example.org;
+	root         /srv/www/example.org/wordpress;
+
+    location /content/ {
+		root /srv/www/example.org/;
+    }
+}
+```
 
 ## Sample environment-config.php
 
@@ -76,6 +87,7 @@ define( 'WP_CACHE',             false );
 
 ## TODO
 
+* Refactor .htaccess to mimick approach from nginx rules if possible
 * Look into possible redirect bugs
 	* https://github.com/markjaquith/WordPress-Skeleton/issues/1#issuecomment-11070686
 * Add redirect to production for static content files, so don't have to pull them down to dev/staging
