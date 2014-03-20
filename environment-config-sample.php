@@ -3,9 +3,9 @@
 //define( 'WP_SITEURL',         'http://development.example.org' );		// Use these if dev/staging environments have their own hostnames
 //define( 'WP_HOME',            'http://development.example.org' );
 
-define( 'DB_NAME',              '' );
-define( 'DB_USER',              '' );
-define( 'DB_PASSWORD',          '' );
+define( 'DB_NAME',              'database_name_here' );
+define( 'DB_USER',              'username_here' );
+define( 'DB_PASSWORD',          'password_here' );
 define( 'DB_HOST',              'localhost' );
 define( 'DB_CHARSET',           'utf8' );
 define( 'DB_COLLATE',           '' );
@@ -13,14 +13,14 @@ define( 'DB_COLLATE',           '' );
 $table_prefix = 'xyz_';
 
 // @link https://api.wordpress.org/secret-key/1.1/salt/
-define( 'AUTH_KEY',             '' );
-define( 'SECURE_AUTH_KEY',      '' );
-define( 'LOGGED_IN_KEY',        '' );
-define( 'NONCE_KEY',            '' );
-define( 'AUTH_SALT',            '' );
-define( 'SECURE_AUTH_SALT',     '' );
-define( 'LOGGED_IN_SALT',       '' );
-define( 'NONCE_SALT',           '' );
+define( 'AUTH_KEY',             'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',      'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',        'put your unique phrase here' );
+define( 'NONCE_KEY',            'put your unique phrase here' );
+define( 'AUTH_SALT',            'put your unique phrase here' );
+define( 'SECURE_AUTH_SALT',     'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',       'put your unique phrase here' );
+define( 'NONCE_SALT',           'put your unique phrase here' );
 
 ini_set( 'log_errors',          'On' );
 ini_set( 'display_errors',      'On' );
