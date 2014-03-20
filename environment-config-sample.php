@@ -10,7 +10,7 @@ define( 'DB_HOST',              'localhost' );
 define( 'DB_CHARSET',           'utf8' );
 define( 'DB_COLLATE',           '' );
 
-$table_prefix = 'xyz_';
+$table_prefix = 'wp_';
 
 // @link https://api.wordpress.org/secret-key/1.1/salt/
 define( 'AUTH_KEY',             'put your unique phrase here' );
