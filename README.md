@@ -40,6 +40,7 @@ server {
 
     location /content/ {
 		root /srv/www/example.org/;
+		try_files $uri $uri/ /wordpress/index.php?$args;
     }
 }
 ```
