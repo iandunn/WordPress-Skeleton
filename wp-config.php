@@ -15,6 +15,17 @@ define( 'DISALLOW_FILE_MODS',	true );
 //define( 'FORCE_SSL_LOGIN',	true );
 //define( 'FORCE_SSL_ADMIN',	true );
 
+// Multisite
+/*
+define( 'WP_ALLOW_MULTISITE',   true );
+define( 'MULTISITE',            true );
+define( 'SUBDOMAIN_INSTALL',    true );
+define( 'DOMAIN_CURRENT_SITE',  'example.org' );
+define( 'PATH_CURRENT_SITE',    '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
+*/
+
 if( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
