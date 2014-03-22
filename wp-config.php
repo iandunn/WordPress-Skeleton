@@ -15,9 +15,8 @@ define( 'DISALLOW_FILE_MODS',	true );
 //define( 'FORCE_SSL_LOGIN',	true );
 //define( 'FORCE_SSL_ADMIN',	true );
 
-if( !defined( 'ABSPATH' ) )
+if( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
 
 require_once( ABSPATH . 'wp-settings.php' );
-
-?>
