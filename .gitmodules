@@ -1,9 +1,6 @@
 [submodule "wordpress"]
 	path = wordpress
 	url = git://github.com/WordPress/WordPress.git
-[submodule "akismet"]
-	path = content/plugins/akismet
-	url = git://github.com/git-mirror/wordpress-akismet.git
 [submodule "content/plugins/wordpress-functionality-plugin-skeleton"]
 	path = content/plugins/wordpress-functionality-plugin-skeleton
 	url = https://github.com/iandunn/WordPress-Functionality-Plugin-Skeleton.git

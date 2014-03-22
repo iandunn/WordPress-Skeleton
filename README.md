@@ -11,7 +11,6 @@ Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream 
 * *.htaccess* rewrite rules for all root-level *.php* files to live in */wordpress/*, but still be accessed from */*
 * */content/uploads* symlink replaced with actual directory
 * Instead of manually symlinking themes from */content/themes/* to */wordpress/wp-content/themes/*, */mu-plugins/wordpress-skeleton-functionality.php* registers */wordpress/wp-content/themes/* as an additional theme directory. Kudos to Rarst for [the idea](https://github.com/Rarst/WordPress-Skeleton/commit/c8770e5828310970d2b1a5099695a932d471e954).
-* Akismet added as Git submodule in */content/plugins/akismet/*
 * [WordPress-Functionality-Plugin-Skeleton](https://github.com/iandunn/WordPress-Functionality-Plugin-Skeleton) added as a Git submodule
 * *.gitignore* pruned for unnecessary entries
 
@@ -56,23 +55,15 @@ server {
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule wp-content/uploads/(.*) http://example.org/wp-content/uploads/$1 [NC,L]
-* Because DISALLOW_FILE_MODS removes the update notices, maybe put in something to display them again
-	try core ticket first though
-* When 3.5 comes out, test this in WPMS. 
-	* Probably need to add blogs.dir stuff to gitignore
-	* Maybe add config for network setup to wp-config, but commented out?
-	* Also update playground/wpms
+* If #25219-core not accepted, maybe put in something to display notices. could probably be separate plugin released in repo.
 * Consider leaving WP_DEBUG on in production, but logged instead of displayed?
 	* http://wordpress.org/support/topic/errors-when-using-wp_debug?replies=17
 * Review updates to upstream and other forks too see what should be merged
-* Remove 3rd party Akismet submodule as a security precaution
-	* Remove from features
 * Since .htaccess is versioned, add an example of setting up rules based on whether the site is dev/staging/production. e.g, htauth
 	* Use dev as the fallback/default in the condition, not production
-* Add more default plugins
+* Add default plugins
 	* Akismet
 	* WP Super Cache or W3 Total Cache
-	* bwp-minify
 	* Login Security Solution
 	* WordFence
 	* Google Authenticator
@@ -81,6 +72,5 @@ server {
 	* Subscribe To Comments, or similar?
 	* Formidable?
 	* Use Brian Petty's github mirror of the dotorg repo
-	* Also setup some kind of configuration management in the mu-plugin to make you own default settings
+* Also setup some kind of configuration management in the mu-plugin to make your own default settings
 * Maybe add reset-file-permissions.sh, and update instructions to move it above httpdocs and update paths
-* Akismet needs a ! entry in .gitignore?
