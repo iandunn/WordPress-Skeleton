@@ -1,17 +1,18 @@
 <?php
 /**
  * The base configurations of the WordPress.
+ *
  * @package WordPress
  */
 
 require_once( dirname( __FILE__ ) . '/environment-config.php' );
 
-define( 'WP_CONTENT_DIR',	dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL',	'http://'. $_SERVER[ 'HTTP_HOST' ] . '/content' );
-define( 'WPLANG',			'' );
+define( 'WP_CONTENT_DIR',       dirname( __FILE__ ) . '/content' );
+define( 'WP_CONTENT_URL',       'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+define( 'WPLANG',               '' );
 
 // Uncomment the SSL constants if the site has a certificate
-define( 'DISALLOW_FILE_MODS',	true );
+define( 'DISALLOW_FILE_MODS',   true );
 //define( 'FORCE_SSL_LOGIN',	true );
 //define( 'FORCE_SSL_ADMIN',	true );
 
@@ -26,7 +27,7 @@ define( 'SITE_ID_CURRENT_SITE', 1 );
 define( 'BLOG_ID_CURRENT_SITE', 1 );
 */
 
-if( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
 
