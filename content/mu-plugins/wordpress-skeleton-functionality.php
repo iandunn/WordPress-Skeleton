@@ -14,4 +14,4 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include themes from the core directory in addition to the custom content directory
-register_theme_directory( ABSPATH . 'wp-content/themes/' );
+register_theme_directory( ABSPATH . 'wp-content/themes' );
