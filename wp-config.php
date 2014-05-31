@@ -11,10 +11,8 @@ define( 'WP_CONTENT_DIR',       dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL',       'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 define( 'WPLANG',               '' );
 
-// Uncomment the SSL constants if the site has a certificate
 define( 'DISALLOW_FILE_MODS',   true );
-//define( 'FORCE_SSL_LOGIN',	true );
-//define( 'FORCE_SSL_ADMIN',	true );
+define( 'FORCE_SSL_ADMIN',	true );
 
 // Multisite
 /*
