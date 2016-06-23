@@ -1,5 +1,7 @@
 # WordPress Skeleton
 
+***NOTE: This is no longer being maintained. I'm using [Regolith](https://github.com/iandunn/regolith) now.***
+
 Customized fork of Mark Jaquith's WordPress Skeleton package. See [the upstream documentation](https://github.com/markjaquith/WordPress-Skeleton) for base details.
 
 
